@@ -1,0 +1,28 @@
+<section ng-controller="PersonagemController" class="item mrgt40">
+    <div class="row">
+
+        <div class="img small-12 medium-6 large-6 columns">
+            <img ng-src="{{dadosPersonagem.thumbnail.path}}.{{dadosPersonagem.thumbnail.extension}}" />
+        </div>
+        <div class="small-12 medium-6 large-6 columns details">
+            <h2>
+                {{dadosPersonagem.name}}
+            </h2>
+            <p>
+                {{dadosPersonagem.description}}
+            </p>
+
+            <h2>
+                Coleções
+            </h2>
+            <ul>
+                <li ng-repeat="colecao in dadosPersonagem.series.items">
+                    <span>{{colecao.name}}</span>
+                </li>
+            </ul>
+
+            <div class="mrgb20">
+                <strong>Ultima Modificação:</strong> {{dadosPersonagem.modified | date}}</div>
+        </div>
+    </div>
+</section>
